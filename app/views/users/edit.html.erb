@@ -1,15 +1,32 @@
+<div>
+  <%= flash[:notice] %>
+<div>
+
  <h2>User info</h2>
- <%= form_with model: @user do |f| %>
 
-  <label for = "user_name">Name</label>
-  <%= f.text_field :name, autofocus: true, id:"user_name", placeholder:"Name"%>
+ <% if @user.errors.any? %>
+  <%= @user.errors.count %>errors prohibited this obj from being save:
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
-  <label for="user_image">Image</label>
-  <%= f.file_field :profile_image, placeholder: "Image", accept: "image/*" %>
-
-  <label for="user_introduction">Introduction</label>
-  <%= f.text_area :introduction %>
-
-  <%= f.submit "Updata User",  %>
-
+ <%= form_with model: @user, local:true do |f| %>
+  <div class = "form_group">
+   <label for = "user_name">Name</label>
+   <%= f.text_field :name, autofocus: true %>
+  </div>
+  <div class = "form_group">
+   <label for="user_image">Image</label>
+   <%= f.file_field :profile_image %>
+  </div>
+  <div class = "form_group">
+   <label for="user_introduction">Introduction</label>
+   <%= f.text_area :introduction %>
+  </div>
+  <div class = "form_group">
+   <%= f.submit "Updata User",  %>
+  </div>
  <% end %>

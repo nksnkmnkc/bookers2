@@ -1,3 +1,19 @@
-<h2>User info</h2>
- <%= image_tag @user.get_profile_image(100,100) %>
- 
+<div class = "container">
+ <div class = "row">
+  <div class = "col-md3">
+   <h2>User info</h2>
+    <tbody>
+     <tr></tr>
+     <tr>
+      <th>name</th>
+      <th><%= @user_name %></th>
+     </tr>
+     <tr>
+      <th>introduction</th>
+      <th><%= @user.introduction %></th>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+ </div>
+</div>

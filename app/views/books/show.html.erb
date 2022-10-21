@@ -1,3 +1,7 @@
+<div>
+  <%= flash[:notice] %>
+<div>
+
 <%= render 'users/user', user: @user %>
 
 <h2>New book</h2>
@@ -6,7 +10,7 @@
  <%= f.text_field :title %>
  <label for = "book_opinion">Opinion</label>
  <%= f.text_field :body %>
- 
+
  <%= f.submit "Create Book", class: "btn btn-success" %>
 
 <div>
@@ -14,9 +18,10 @@
  <table>
   <tr>
    <td><%= attachement_image_tag @user, :profile_image, :fill,100,100, fallback: "no_image.jpg" %></td>
-   <td><%= link_to @user.name, user-path(@user) %></td>
+   <td><%= link_to @user.name, user_path(@user) %></td>
    <td><%= @book.title %></td>
    <td><%= @book.body %></td>
+   
    <% if @book.user_id == current_user.id %>
     <td><%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-sm btn-success"  %></td>
     <td><%= link_to "Destroy", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-sm btn-danger" %></td>
