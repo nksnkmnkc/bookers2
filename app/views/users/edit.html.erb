@@ -16,19 +16,19 @@
 <% end %>
 
  <%= form_with model: @user, local:true do |f| %>
-  <div class = "form_group">
+  <div class = "form-group">
    <%= f.label :name %>
    <%= f.text_field :name, autofocus: true, class: "form-control name"%>
   </div>
-  <div class = "form_group">
+  <div class = "form-group">
    <%= f.label :profile_image %>
    <%= f.file_field :profile_image, class: "form-control-file profile_image" %>
   </div>
-  <div class = "form_group">
+  <div class = "form-group">
    <%= f.label :introduction %>
    <%= f.text_area :introduction, class: "form-control introduction" %>
   </div>
-  <div class = "form_group">
+  <div class = "form-group">
    <%= f.submit class: "btn btn-secondary" %>
   </div>
  <% end %>
