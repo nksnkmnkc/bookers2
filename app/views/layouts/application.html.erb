@@ -14,9 +14,9 @@
    <header>
     <nav class = "navbar navbar-expand-lg navbar-dark bg-dark">
      <div class = "container">
-      <a class = "navbar-brand" herf = "/">
-       <span>Bookers</span>
-      </a>
+      <div class = "navbar-brand" >
+       <%= link_to "Bookers", root_path, class: 'text-light' %>
+      </div>
 
       <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data_target = "#navbarNavDropdown" aria-controls = "navbarNavDropdown" aria-expanded = "false" aria-label = "Toggle navigation">
        <span class = "navbar-toggler-icon"></span>
@@ -51,7 +51,7 @@
 
         <% else %>
         <li class = "nav-item">
-        <%= link_to  root_path,class: 'nav-link text-light' do %>
+        <%= link_to  root_path, class: 'nav-link text-light' do %>
         <i class="fas fa-home"></i>Home
         <% end %>
         </li>
@@ -79,7 +79,7 @@
    </div>
   </nav>
   </header>
-  <%= flash[:notice] %>
+   <%= flash[:notice] %>
     <%= yield %>
   <footer>
    <div class = "container mt-5">
