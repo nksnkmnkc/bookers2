@@ -30,17 +30,17 @@
        </tr>
       </thead>
        <tbody>
-        <tr>
-         <td>
-          <%= image_tag current_user.get_profile_image(80,80) %>
-         </td>
-          <% @users.each do |user| %>
-           <td><%= user.name %> </td>
-          <% end %>
-         <td>
-          <%= link_to 'Show', user_path(@user.id) %>
-         </td>
-        </tr>
+        <% @users.each do |user| %>
+         <tr>
+          <td>
+           <%= image_tag current_user.get_profile_image(80,80) %>
+          </td>
+          <td><%= user.name %> </td>
+          <td>
+           <%= link_to 'Show', user_path(@user.id) %>
+          </td>
+         </tr>
+        <% end %>
        </tbody>
      </table>
     </div>
