@@ -40,7 +40,7 @@ class BooksController < ApplicationController
 
  def update
   @book = Book.find(params[:id])
-  @book.user_id == current_user.id
+  @book.user.id == current_user.id
   if @book.update(book_params)
    flash[:notice] = "You have update book successfully."
    redirect_to book_path
